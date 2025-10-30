@@ -1,0 +1,74 @@
+# EEG-RSA Analysis Configuration
+# Configuration parameters for RSA analysis
+
+# Feature extraction
+features:
+  # ERP features
+  erp:
+    enabled: true
+    time_windows:          # Time windows in seconds for ERP extraction
+      - [0.08, 0.12]       # P1
+      - [0.15, 0.20]       # N170
+      - [0.30, 0.50]       # P300
+  
+  # Spectral features
+  spectral:
+    enabled: true
+    method: 'multitaper'   # 'multitaper' or 'welch'
+    frequency_bands:
+      delta: [1, 4]
+      theta: [4, 8]
+      alpha: [8, 13]
+      beta: [13, 30]
+      gamma: [30, 45]
+  
+  # Spatial features (PCA/ICA)
+  spatial:
+    enabled: false
+    n_components: 10
+    method: 'pca'          # 'pca' or 'ica'
+  
+  # Normalization
+  normalize: true          # Z-score normalization
+
+# RDM computation
+rdm:
+  metric: 'correlation'    # 'correlation', 'euclidean', 'cosine'
+  normalize: true          # Normalize features before computing distances
+  cross_validation:
+    enabled: false
+    n_folds: 5
+
+# Statistical testing
+statistics:
+  # Permutation test
+  permutation:
+    enabled: true
+    n_permutations: 10000
+    random_state: 42
+  
+  # Bootstrap confidence intervals
+  bootstrap:
+    enabled: true
+    n_bootstrap: 10000
+    confidence_level: 0.95
+    random_state: 42
+  
+  # Correlation method
+  correlation_method: 'spearman'  # 'spearman' or 'pearson'
+
+# Model RDMs
+models:
+  # Define which theoretical models to test
+  test_models:
+    - stimulus_specific
+    - modality_specific
+    - stimulus_only
+    - independent
+
+# Visualization
+visualization:
+  colormap: 'viridis'
+  figure_dpi: 300
+  save_figures: true
+  output_dir: '../data/outputs/figures'

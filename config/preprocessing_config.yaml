@@ -1,0 +1,39 @@
+# EEG Preprocessing Configuration
+# Configuration parameters for preprocessing pipeline
+
+# Filtering parameters
+filtering:
+  lowpass: 40.0          # Hz
+  highpass: 0.1          # Hz
+  notch: 50.0            # Hz (50 for Europe, 60 for US)
+  method: 'fir'          # 'fir' or 'iir'
+  phase: 'zero'          # 'zero', 'zero-double', 'minimum'
+
+# Referencing
+referencing:
+  type: 'average'        # 'average', 'REST', or list of channel names
+
+# Artifact removal
+artifacts:
+  bad_channel_threshold: 3.0    # Z-score threshold
+  run_ica: true
+  n_ica_components: 25
+  ica_method: 'fastica'         # 'fastica', 'infomax', 'picard'
+  
+# Epoching
+epoching:
+  tmin: -0.2             # seconds before stimulus
+  tmax: 1.0              # seconds after stimulus
+  baseline: [-0.2, 0.0]  # baseline period
+  reject_threshold:      # Peak-to-peak amplitude thresholds
+    eeg: 150e-6          # 150 microvolts
+  use_autoreject: false  # Use autoreject algorithm if available
+
+# Event codes (update with your experiment's codes)
+event_codes:
+  imagery_face: 1
+  imagery_house: 2
+  imagery_object: 3
+  perception_face: 11
+  perception_house: 12
+  perception_object: 13

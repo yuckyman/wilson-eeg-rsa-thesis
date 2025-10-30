@@ -1,0 +1,22 @@
+# Path Configuration
+# Define paths for data, outputs, and results
+
+# Data directories
+data:
+  root: '../data'
+  raw: '../data/raw'
+  preprocessed: '../data/preprocessed'
+  outputs: '../data/outputs'
+  figures: '../data/outputs/figures'
+
+# Subject information
+subjects:
+  format: 'sub-{:02d}'      # Format string for subject IDs
+  list: [1, 2, 3, 4, 5]     # List of subject numbers to process
+
+# File naming conventions
+file_names:
+  raw_eeg: 'sub-{subject}_task-{task}_eeg.bdf'
+  epochs: '{condition}_epochs-epo.fif'
+  rdm: 'rdm_{condition}_{subject}.npy'
+  results: 'results_{analysis}_{date}.pkl'
