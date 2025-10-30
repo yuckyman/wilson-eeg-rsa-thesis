@@ -1,0 +1,131 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+PIPFILE.lock
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+
+# IPython
+profile_default/
+ipython_config.py
+
+# Data files (keep structure, ignore content)
+data/raw/*
+!data/raw/.gitkeep
+data/preprocessed/*
+!data/preprocessed/.gitkeep
+data/outputs/*
+!data/outputs/.gitkeep
+
+# Large data files
+*.bdf
+*.edf
+*.fif
+*.set
+*.vhdr
+*.vmrk
+*.eeg
+*.dat
+*.mat
+*.hdf5
+*.h5
+
+# Results and outputs
+*.npy
+*.npz
+*.pkl
+*.pickle
+*.csv
+*.xlsx
+
+# Figures (optional - comment out if you want to track figures)
+data/outputs/figures/*
+!data/outputs/figures/.gitkeep
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.pdf
+*.eps
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OS files
+Thumbs.db
+.DS_Store
+.Spotlight-V100
+.Trashes
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Config files with sensitive data (if any)
+config/local_*.yaml
+config/secrets.yaml
+
+# Model checkpoints and weights
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+
+# Documentation build
+docs/_build/
+docs/_static/
+docs/_templates/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Profiling
+*.prof
